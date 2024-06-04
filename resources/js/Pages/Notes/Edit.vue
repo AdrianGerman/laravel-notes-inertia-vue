@@ -12,7 +12,7 @@
                         <div class="px-4 sm:px-0">
                             <h3 class="text-lg text-white">Editar una nota</h3>
                             <p class="text-sm text-white mt-2">
-                                Si editas la nota <b></b> podrás volver al estado anterior.
+                                Si editas la nota <b>NO</b> podrás volver al estado anterior.
                             </p>
                         </div>
                     </div>

@@ -19,20 +19,17 @@
                     </div>
                     <div class="md:col-span-2 mt-5 md:mt-0">
                         <div class="shadow bg-black md:rounded-md p-4 text-white">
+
                             <table>
                                 <tr v-for="(note, i) in notes" :key="i">
                                     <td class="border px-4 py-2">
                                         {{ note.excerpt }}
                                     </td>
                                     <td class="border px-4 py-2">
-                                        <NavLink :href="route('notes.show', note.id)">
-                                            Ver
-                                        </NavLink>
+                                        <Link :href="route('notes.show', note.id)">Ver</Link>
                                     </td>
                                     <td class="border px-4 py-2">
-                                        <NavLink :href="route('notes.edit', note.id)">
-                                            Editar
-                                        </NavLink>
+                                        <Link :href="route('notes.edit', note.id)">Editar</Link>
                                     </td>
                                 </tr>
                             </table>
@@ -46,7 +43,7 @@
 
 <script setup>
 import AppLayout from '@/Layouts/AppLayout.vue';
-import NavLink from '@/Components/NavLink.vue';
+import { Link } from '@inertiajs/vue3';
 
 const props = defineProps({
     notes: Array,
