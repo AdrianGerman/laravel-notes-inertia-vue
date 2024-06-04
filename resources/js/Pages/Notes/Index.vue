@@ -18,8 +18,10 @@
                         </div>
                     </div>
                     <div class="md:col-span-2 mt-5 md:mt-0">
+                        <Link :href="route('notes.create')"
+                            class="bg-blue-500 text-white font-bold py-2 px-4 rounded-md">
+                        Crear</Link>
                         <div class="shadow bg-black md:rounded-md p-4 text-white">
-
                             <table>
                                 <tr v-for="(note, i) in notes" :key="i">
                                     <td class="border px-4 py-2">
