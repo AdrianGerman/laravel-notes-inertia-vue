@@ -12,7 +12,7 @@
                     <div class="md:col-span-1">
                         <div class="px-4 sm:px-0">
                             <h3 class="text-lg text-white">Listado de notas</h3>
-                            <p class="text-sm text-white">Toma el registro correcto y ejecuta cualquier función
+                            <p class="text-sm text-white mt-2">Toma el registro correcto y ejecuta cualquier función
                                 (ver, editar o eliminar)
                             </p>
                         </div>
