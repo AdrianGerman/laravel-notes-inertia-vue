@@ -33,6 +33,8 @@
                                     Editar
                                 </button>
                             </form>
+                            <hr class="my-6">
+                            <a href="#" @click.prevent="destroy" class="text-white">Eliminar nota</a>
                         </div>
                     </div>
                 </div>
@@ -57,5 +59,11 @@ const form = useForm({
 
 const submit = () => {
     form.put(route('notes.update', props.note.id), form);
+}
+
+const destroy = () => {
+    if (confirm('¿Esta seguro que desea eliminar?')) {
+        form.delete(route('notes.destroy', props.note.id));
+    }
 }
 </script>
