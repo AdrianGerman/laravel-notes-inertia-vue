@@ -12,13 +12,15 @@
                     <div class="md:col-span-1">
                         <div class="px-4 sm:px-0">
                             <h3 class="text-lg text-white">Listado de notas</h3>
-                            <p class="text-sm text-white mt-2">Toma el registro correcto y ejecuta cualquier función
-                                (ver, editar o eliminar)
+                            <p class="text-sm text-white mt-2">
+                                Aquí podrás ver el listado completo de las notas existentes, ver el detalle de estas,
+                                editarlas y eliminarlas, de igual modo filtrar mediante la búsqueda una nota que estés
+                                buscando.
                             </p>
                         </div>
                     </div>
-                    <div class="md:col-span-2 mt-5 md:mt-0">
-                        <div class="shadow bg-black md:rounded-md p-4 text-white">
+                    <div class="bg-gray-800 rounded-md md:col-span-2 mt-5 md:mt-0">
+                        <div class="shadow bg-black- md:rounded-md p-4 text-gray-300">
                             <div class="flex justify-between">
                                 <input type="text" class="form-input rounded-md shadow-sm text-black"
                                     placeholder="Buscar..." v-model="q">
@@ -32,11 +34,14 @@
                                     <td class="border px-4 py-2">
                                         {{ note.excerpt }}
                                     </td>
-                                    <td class="border px-4 py-2">
+                                    <td class="px-4 py-2">
                                         <Link :href="route('notes.show', note.id)">Ver</Link>
                                     </td>
-                                    <td class="border px-4 py-2">
+                                    <td class="px-4 py-2">
                                         <Link :href="route('notes.edit', note.id)">Editar</Link>
+                                    </td>
+                                    <td class="px-4 py-2 text-red-700">
+                                        <a href="#" @click.prevent="destroy(note.id)">X</a>
                                     </td>
                                 </tr>
                             </table>
@@ -56,6 +61,12 @@ import { ref, watch } from 'vue';
 const props = defineProps({
     notes: Array,
 });
+
+const destroy = (id) => {
+    if (confirm('¿Esta seguro que desea eliminar?')) {
+        router.delete(route('notes.destroy', id));
+    }
+}
 
 const q = ref('');
 
