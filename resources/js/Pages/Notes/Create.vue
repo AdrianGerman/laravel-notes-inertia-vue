@@ -16,22 +16,23 @@
                             </p>
                         </div>
                     </div>
-                    <div class="md:col-span-2 mt-5 md:mt-0">
-                        <div class="shadow bg-black md:rounded-md p-4">
+                    <div class="bg-gray-800 rounded-md md:col-span-2 mt-5 md:mt-0">
+                        <div class="shadow md:rounded-md p-4">
                             <form @submit.prevent="submit">
-                                <label class="block font-medium text-sm text-gray-300">
+                                <label class="block font-medium text-md text-gray-300">
                                     Resumen
                                 </label>
-                                <textarea class="form-input w-full rounded-md shadow-sm"
+                                <textarea class="bg-gray-900 text-gray-300 form-input w-full rounded-md shadow-sm mb-4"
                                     v-model="form.excerpt"></textarea>
-                                <label class="block font-medium text-sm text-gray-300">
+                                <label class="block font-medium text-md text-gray-300">
                                     Contenido
                                 </label>
-                                <textarea class="form-input w-full rounded-md shadow-sm" v-model="form.content"
-                                    rows="8"></textarea>
+                                <textarea class="bg-gray-900 text-gray-300 form-input w-full rounded-md shadow-sm mb-4"
+                                    v-model="form.content" rows="8"></textarea>
                                 <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md">
                                     Crear
                                 </button>
+                                <Link class="text-blue-400 ml-4" :href="route('notes.index')">Volver</Link>
                             </form>
                         </div>
                     </div>
@@ -43,8 +44,7 @@
 
 <script setup>
 import AppLayout from '@/Layouts/AppLayout.vue';
-import NavLink from '@/Components/NavLink.vue';
-import { useForm } from '@inertiajs/vue3';
+import { useForm, Link } from '@inertiajs/vue3';
 
 const props = defineProps({
     note: Object,
