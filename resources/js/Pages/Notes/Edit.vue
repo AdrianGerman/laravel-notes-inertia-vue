@@ -10,31 +10,32 @@
                 <div class="md:grid md:grid-cols-3 md:gap-6">
                     <div class="md:col-span-1">
                         <div class="px-4 sm:px-0">
-                            <h3 class="text-lg text-white">Editar una nota</h3>
-                            <p class="text-sm text-white mt-2">
-                                Si editas la nota <b>NO</b> podrás volver al estado anterior.
+                            <h3 class="text-lg text-gray-200">Editar una nota</h3>
+                            <p class="text-sm text-gray-400 mt-2">
+                                Si editas la nota esta <b>NO</b> podrá volver a su estado anterior.
                             </p>
                         </div>
                     </div>
-                    <div class="md:col-span-2 mt-5 md:mt-0">
-                        <div class="shadow bg-black md:rounded-md p-4">
+                    <div class="bg-gray-800 rounded-md md:col-span-2 mt-5 md:mt-0">
+                        <div class="shadow md:rounded-md p-4">
                             <form @submit.prevent="submit">
-                                <label class="block font-medium text-sm text-gray-300">
+                                <label class="block font-medium text-md text-gray-300">
                                     Resumen
                                 </label>
-                                <textarea class="form-input w-full rounded-md shadow-sm"
+                                <textarea class="form-input w-full rounded-md shadow-sm mb-4"
                                     v-model="form.excerpt"></textarea>
-                                <label class="block font-medium text-sm text-gray-300">
+                                <label class="block font-medium text-md text-gray-300">
                                     Contenido
                                 </label>
-                                <textarea class="form-input w-full rounded-md shadow-sm" v-model="form.content"
+                                <textarea class="form-input w-full rounded-md shadow-sm mb-4" v-model="form.content"
                                     rows="8"></textarea>
                                 <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md">
                                     Editar
                                 </button>
+                                <Link class="text-blue-400 ml-4" :href="route('notes.index')">Volver</Link>
                             </form>
                             <hr class="my-6">
-                            <a href="#" @click.prevent="destroy" class="text-white">Eliminar nota</a>
+                            <a href="#" @click.prevent="destroy" class="text-red-500">Eliminar nota</a>
                         </div>
                     </div>
                 </div>
@@ -45,8 +46,7 @@
 
 <script setup>
 import AppLayout from '@/Layouts/AppLayout.vue';
-import NavLink from '@/Components/NavLink.vue';
-import { useForm } from '@inertiajs/vue3';
+import { useForm, Link } from '@inertiajs/vue3';
 
 const props = defineProps({
     note: Object,
