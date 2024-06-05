@@ -10,8 +10,8 @@
                 <div class="md:grid md:grid-cols-3 md:gap-6">
                     <div class="md:col-span-1">
                         <div class="px-4 sm:px-0">
-                            <h3 class="text-lg text-white">Crear una nota</h3>
-                            <p class="text-sm text-white mt-2">
+                            <h3 class="text-lg text-gray-300">Crear una nota</h3>
+                            <p class="text-sm text-gray-400 mt-2">
                                 Mas adelante la podrás editar
                             </p>
                         </div>

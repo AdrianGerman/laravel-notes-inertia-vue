@@ -10,7 +10,7 @@
                 <div class="md:grid md:grid-cols-3 md:gap-6">
                     <div class="md:col-span-1">
                         <div class="px-4 sm:px-0">
-                            <h3 class="text-lg text-gray-200">Editar una nota</h3>
+                            <h3 class="text-lg text-gray-300">Editar una nota</h3>
                             <p class="text-sm text-gray-400 mt-2">
                                 Si editas la nota esta <b>NO</b> podrá volver a su estado anterior.
                             </p>
@@ -22,13 +22,13 @@
                                 <label class="block font-medium text-md text-gray-300">
                                     Resumen
                                 </label>
-                                <textarea class="form-input w-full rounded-md shadow-sm mb-4"
+                                <textarea class="bg-gray-900 text-gray-300 form-input w-full rounded-md shadow-sm mb-4"
                                     v-model="form.excerpt"></textarea>
                                 <label class="block font-medium text-md text-gray-300">
                                     Contenido
                                 </label>
-                                <textarea class="form-input w-full rounded-md shadow-sm mb-4" v-model="form.content"
-                                    rows="8"></textarea>
+                                <textarea class="bg-gray-900 text-gray-300 form-input w-full rounded-md shadow-sm mb-4"
+                                    v-model="form.content" rows="8"></textarea>
                                 <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md">
                                     Editar
                                 </button>
